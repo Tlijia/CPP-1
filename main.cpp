@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//¶¨ÒåÈÕÆÚÀà
+//å®šä¹‰æ—¥æœŸç±»
 class Date
 {
 public:
@@ -14,19 +14,19 @@ private:
     int year,month,day;
 };
 
-void Date::setdate(int newy,int newm,int newd)//Éè¶¨ÈÕÆÚ
+void Date::setdate(int newy,int newm,int newd)//è®¾å®šæ—¥æœŸ
 {
     year=newy;
     month=newm;
     day=newd;
 }
 
-inline void Date::printdate()//´òÓ¡ÈÕÆÚ
+inline void Date::printdate()//æ‰“å°æ—¥æœŸ
 {
     cout<<year<<"/"<<month<<"/"<<day<<endl;
 }
 
-int Date::judgeyear()//ÅĞ¶ÏÊÇ·ñÎªÈòÄê£¬ÈôÊÇÔò·µ»Ø1£¬·ñÔò·µ»Ø0
+int Date::judgeyear()//åˆ¤æ–­æ˜¯å¦ä¸ºé—°å¹´ï¼Œè‹¥æ˜¯åˆ™è¿”å›1ï¼Œå¦åˆ™è¿”å›0
 {
     if(year%100==0)
     {
@@ -44,13 +44,13 @@ int Date::judgeyear()//ÅĞ¶ÏÊÇ·ñÎªÈòÄê£¬ÈôÊÇÔò·µ»Ø1£¬·ñÔò·µ»Ø0
     }
 }
 
-void Date::plusoneday()//ÊµÏÖ¼ÓÒ»Ìì²Ù×÷
+void Date::plusoneday()//å®ç°åŠ ä¸€å¤©æ“ä½œ
 {
     int i;
 
     switch(month)
     {
-    case 1://ÓĞ31ÌìµÄÔÂ
+    case 1://æœ‰31å¤©çš„æœˆ
     case 3:
     case 5:
     case 7:
@@ -70,7 +70,7 @@ void Date::plusoneday()//ÊµÏÖ¼ÓÒ»Ìì²Ù×÷
         }
     case 12:
         {
-            if(day==31)//12/31,Äê·İ¼ÓÒ»
+            if(day==31)//12/31,å¹´ä»½åŠ ä¸€
             {
                 day=1;
                 month=1;
@@ -78,7 +78,7 @@ void Date::plusoneday()//ÊµÏÖ¼ÓÒ»Ìì²Ù×÷
             }
             break;
         }
-    case 2://¸ù¾İÊÇ·ñÎªÈòÄêÅĞ¶Ï2ÔÂÓĞ¼¸Ìì
+    case 2://æ ¹æ®æ˜¯å¦ä¸ºé—°å¹´åˆ¤æ–­2æœˆæœ‰å‡ å¤©
         {
             i=judgeyear();
             if(i==1)
@@ -108,7 +108,7 @@ void Date::plusoneday()//ÊµÏÖ¼ÓÒ»Ìì²Ù×÷
             }
             break;
         }
-    case 4://ÓĞ30ÌìµÄÔÂ
+    case 4://æœ‰30å¤©çš„æœˆ
     case 6:
     case 9:
     case 11:
@@ -134,15 +134,15 @@ int main()
     int n,i,year,month,day;
     while(1)
     {
-        cout<<"ÊäÈëÄêÔÂÈÕ"<<endl;
+        cout<<"è¾“å…¥å¹´æœˆæ—¥"<<endl;
         cin>>year>>month>>day;
-        if(month>12||day>31)//ÊäÈëÓĞÎóÌáĞÑ
+        if(month>12||day>31)//è¾“å…¥æœ‰è¯¯æé†’
         {
-            cout<<"ÊäÈë´íÎóÇëÖØÊä"<<endl;
+            cout<<"è¾“å…¥é”™è¯¯è¯·é‡è¾“"<<endl;
             continue;
         }
         d.setdate(year,month,day);
-        cout<<"ÊäÈë1Êä³ö£¬2¼ÓÒ»ÌìÊä³ö£¬3ÅĞ¶ÏÊÇ·ñÈòÄê"<<endl;
+        cout<<"è¾“å…¥1è¾“å‡ºï¼Œ2åŠ ä¸€å¤©è¾“å‡ºï¼Œ3åˆ¤æ–­æ˜¯å¦é—°å¹´"<<endl;
         cin>>n;
         switch(n)
         {
@@ -164,16 +164,16 @@ int main()
 
                 if(i==0)
                 {
-                    cout<<"²»ÊÇÈòÄê"<<endl;
+                    cout<<"ä¸æ˜¯é—°å¹´"<<endl;
                 }
                 else
                 {
-                    cout<<"ÊÇÈòÄê"<<endl;
+                    cout<<"æ˜¯é—°å¹´"<<endl;
                 }
                 break;
             }
         }
-        cout<<"ÊäÈë1ÍË³ö,2¼ÌĞø"<<endl;
+        cout<<"è¾“å…¥1é€€å‡º,2ç»§ç»­"<<endl;
         cin>>n;
         if(n==1)
             return 0;
@@ -181,3 +181,4 @@ int main()
             continue;
     }
 }
+å•Šå•Šå•Šå•Šå•Š
